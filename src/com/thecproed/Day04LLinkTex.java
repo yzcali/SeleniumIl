@@ -1,6 +1,5 @@
 package com.thecproed;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class day03_Locators {
+public class Day04LLinkTex {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -16,19 +15,13 @@ public class day03_Locators {
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/");
 
-        WebElement signInLink = driver.findElement(By.id("sign-in"));
-
+        WebElement signInLink = driver.findElement(By.linkText("Sign in"));
         signInLink.click();
 
-        WebElement emailbox= driver.findElement(By.id("session_email"));
+        WebElement homeLink = driver.findElement(By.partialLinkText("Ho"));// if we write home or part of home it doesn't matter it works same as well.
+        homeLink.click();
 
-        emailbox.sendKeys("testtechproed@gmail.com");
 
-        WebElement passbox= driver.findElement(By.id("session_password"));
-        passbox.sendKeys("Test1234!");
-
-        WebElement signbtn= driver.findElement(By.name("commit"));
-        signbtn.click();
 
 
 

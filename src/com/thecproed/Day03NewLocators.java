@@ -7,10 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Denm {
+public class Day03NewLocators {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver ();
+        System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
@@ -35,10 +35,11 @@ public class Denm {
         signInButonu.click();
 
 
-          String baslik= driver.getTitle();
-        if(baslik.equals("Address Book")){
+        String baslik = driver.getTitle();
+        if (baslik.equals("Address Book")) {
             System.out.println("Giriş Başarılı.");
-        }else{
+        } else {
             System.out.println("Giriş Başarısız.");
+        }
     }
 }

@@ -1,6 +1,5 @@
 package com.thecproed;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,29 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class day03_Locators {
+public class Day04_GoogleTest {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
-        driver.get("http://a.testaddressbook.com/");
+        driver.get("http://google.com/");
 
-        WebElement signInLink = driver.findElement(By.id("sign-in"));
+        WebElement searchB= driver.findElement(By.name("q"));
+        searchB.sendKeys("city bike");
+        searchB.submit();
 
-        signInLink.click();
+       // WebElement resultN= driver.findElement(By.id("result-status"));
+       // System.out.println(resultN.getText());
 
-        WebElement emailbox= driver.findElement(By.id("session_email"));
-
-        emailbox.sendKeys("testtechproed@gmail.com");
-
-        WebElement passbox= driver.findElement(By.id("session_password"));
-        passbox.sendKeys("Test1234!");
-
-        WebElement signbtn= driver.findElement(By.name("commit"));
-        signbtn.click();
-
-
+        WebElement shopLink= driver.findElement(By.partialLinkText("Shopping"));
+        shopLink.click();
 
     }
 }
