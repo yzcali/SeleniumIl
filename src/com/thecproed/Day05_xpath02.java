@@ -7,23 +7,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day04_GoogleTest {
+public class Day05_xpath02 {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
-        driver.get("http://google.com/");
+        driver.get("http://a.testaddressbook.com");
 
-        WebElement searchB= driver.findElement(By.name("q"));
-        searchB.sendKeys("city bike");
-        searchB.submit();
+        WebElement pic= driver.findElement(By.xpath("//h1"));
+        System.out.println(pic.getText());//Welcome to Address Book
 
-       WebElement resultN= driver.findElement(By.id("result-stats"));//Environ 1250000000 results (0,73 seconds)
-       System.out.println(resultN.getText());
 
-        WebElement shopLink= driver.findElement(By.partialLinkText("Shopping"));
-        shopLink.click();
 
     }
 }

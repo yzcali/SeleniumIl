@@ -7,23 +7,29 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day04_GoogleTest {
+public class Day05_Xpath01 {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
-        driver.get("http://google.com/");
+        driver.get("http://a.testaddressbook.com/sign_in");
 
-        WebElement searchB= driver.findElement(By.name("q"));
-        searchB.sendKeys("city bike");
-        searchB.submit();
+        WebElement emailB= driver.findElement(By.xpath("//input[@type='email']"));
+        emailB.sendKeys("testtechproed@gmail.com");
 
-       WebElement resultN= driver.findElement(By.id("result-stats"));//Environ 1250000000 results (0,73 seconds)
-       System.out.println(resultN.getText());
+       WebElement passB= driver.findElement(By.xpath("//input[@placeholder='Password']"));
+       passB.sendKeys("Test1234!");
+       passB.submit();
 
-        WebElement shopLink= driver.findElement(By.partialLinkText("Shopping"));
-        shopLink.click();
+
+
+      WebElement sign_O= driver.findElement(By.xpath("//a[@rel='nofollow']"));
+      sign_O.click();
+
+
+
+
 
     }
 }
