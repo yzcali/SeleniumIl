@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day04Lgiris {
+public class Day04_LLinkTex {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -15,17 +15,11 @@ public class Day04Lgiris {
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/");
 
-        WebElement signInLink = driver.findElement(By.id("sign-in"));
+        WebElement signInLink = driver.findElement(By.linkText("Sign in"));
         signInLink.click();
 
-        WebElement emailB=  driver.findElement(By.className("form-control"));
-        emailB.sendKeys("testtechproed@gmail.com");
-
-        WebElement passW= driver.findElement(By.id("session_password"));
-        passW.sendKeys("Test1234!");
-
-        WebElement signInButonu = driver.findElement(By.name("commit"));
-        signInButonu.click();
+        WebElement homeLink = driver.findElement(By.partialLinkText("Ho"));// if we write home or part of home it doesn't matter it works same as well.
+        homeLink.click();
 
 
 

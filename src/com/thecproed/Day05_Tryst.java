@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day05Tryst {
+public class Day05_Tryst {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:/Users/yzc/Documents/selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
