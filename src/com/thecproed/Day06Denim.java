@@ -38,5 +38,13 @@ public class Day06Denim {
       }else{
           System.out.println("giris basarili");
       }
+
+        try{
+            Thread.sleep(5000);
+        } catch( InterruptedException e){
+            e.printStackTrace();
+        }
+      driver.quit();
+
     }
 }
