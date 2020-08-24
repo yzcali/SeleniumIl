@@ -26,8 +26,8 @@ public class Day06Denim {
 
         try{
             Thread.sleep(3000);
-        }catch( InterruptedException e){
-
+        } catch( InterruptedException e){
+              e.printStackTrace();
         }
 
       String url = driver.getCurrentUrl();

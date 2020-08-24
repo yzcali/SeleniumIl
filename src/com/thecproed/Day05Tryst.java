@@ -25,7 +25,7 @@ public class Day05Tryst {
         try{
             Thread.sleep(60000);// 60 saniye bekledi toplamda reklam dahil .
         }catch( InterruptedException e){
-
+             e.printStackTrace();
         }
          driver.close();
 
